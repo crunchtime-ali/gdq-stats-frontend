@@ -1,0 +1,13 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Cubano';
+  src: url('../fonts/cubano-regular-webfont.eot');
+  src: url('../fonts/cubano-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/cubano-regular-webfont.woff') format('woff'),
+    url('../fonts/cubano-regular-webfont.ttf') format('truetype'),
+    url('../fonts/cubano-regular-webfont.svg#webfont') format('svg');
+}
