@@ -1,0 +1,7 @@
+query getEventTypes {
+  getEventTypes @list(name: "All_Event_Types") {
+    id
+    name
+    description
+  }
+}

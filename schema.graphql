@@ -1,0 +1,47 @@
+type CreateEvent {
+  name: String!
+  year: Int!
+}
+
+input CreateEventTypeInput {
+  description: String!
+  name: String!
+}
+
+input DeleteEventTypeInput {
+  id: ID!
+}
+
+type Event {
+  end_date: Time!
+  eventType: EventType!
+  id: ID!
+  start_date: Time!
+  year: Int!
+}
+
+type EventType {
+  description: String!
+  id: ID!
+  name: String!
+}
+
+type Mutation {
+  createEventType(input: CreateEventTypeInput!): EventType!
+  deleteEventType(input: DeleteEventTypeInput!): EventType!
+  updateEventType(input: UpdateEventTypeInput!): EventType!
+}
+
+type Query {
+  getCurrentEvent: Event!
+  getEventTypes: [EventType!]!
+  getEvents: [Event!]!
+}
+
+scalar Time
+
+input UpdateEventTypeInput {
+  description: String
+  id: ID!
+  name: String
+}

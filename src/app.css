@@ -11,3 +11,10 @@
     url('../fonts/cubano-regular-webfont.ttf') format('truetype'),
     url('../fonts/cubano-regular-webfont.svg#webfont') format('svg');
 }
+
+body {
+  background-color: white;
+  font-family: 'Open Sans', Helvetica, Arial;
+  font-size: x-small;
+  font-weight: normal;
+}
