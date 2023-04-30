@@ -6,5 +6,5 @@
   <div class="bg-darkGray p-2.5 font-cubano text-lg leading-none">
     <h2>{title}</h2>
   </div>
-  <div><slot name="content" /></div>
+  <div class="m-5"><slot name="content" /></div>
 </div>

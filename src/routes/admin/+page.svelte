@@ -1,15 +1,16 @@
 <script lang="ts">
-  import { load_getEventTypes } from '../../../$houdini';
+  import { load_getAdminData } from '../../../$houdini';
   import Header from '../../components/Layout/PageHeader.svelte';
   import type { PageData } from './$houdini';
+  import EventList from './EventList/EventList.svelte';
   import EventTypeList from './EventTypeList/EventTypeList.svelte';
 
   export let data: PageData;
 
-  $: ({ getEventTypes } = data);
+  $: ({ getAdminData } = data);
 
   const handleFocus = async () => {
-    ({ getEventTypes } = await load_getEventTypes({
+    ({ getAdminData } = await load_getAdminData({
       policy: 'NetworkOnly'
     }));
   };
@@ -17,4 +18,5 @@
 
 <svelte:window on:focus={handleFocus} />
 <Header title="admin stuff" />
-<EventTypeList eventTypes={$getEventTypes.data} />
+<EventTypeList eventTypes={$getAdminData?.data?.getEventTypes ?? []} />
+<EventList events={$getAdminData?.data?.getEvents ?? []} />

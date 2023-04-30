@@ -45,7 +45,7 @@
   };
 </script>
 
-<div class="m-5 flex justify-between text-base leading-none">
+<div class="my-5 flex justify-between text-base leading-none">
   <div class="flex w-4/6 justify-between gap-x-4">
     <input
       class="w-3/6 rounded border-2 border-darkGray p-1.5"

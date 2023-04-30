@@ -13,10 +13,16 @@ input DeleteEventTypeInput {
 }
 
 type Event {
+  completed_games_count: Int!
+  donation_amount: Float!
+  donation_count: Int!
   end_date: Time!
   eventType: EventType!
   id: ID!
+  max_viewers_count: Int!
   start_date: Time!
+  tweets_count: Int!
+  twitch_chats_count: Int!
   year: Int!
 }
 
@@ -26,9 +32,14 @@ type EventType {
   name: String!
 }
 
+input MigrateEventDataInput {
+  id: ID!
+}
+
 type Mutation {
   createEventType(input: CreateEventTypeInput!): EventType!
   deleteEventType(input: DeleteEventTypeInput!): EventType!
+  migrateEventData(input: MigrateEventDataInput!): Event!
   updateEventType(input: UpdateEventTypeInput!): EventType!
 }
 
