@@ -8,7 +8,7 @@
 </script>
 
 <button
-  class={`rounded border-2 border-darkGray px-3 py-1.5 font-cubano text-secondary hover:text-secondary-hover ${className}`}
+  class={`rounded border-2 border-mediumGray px-3 py-1.5 font-cubano text-secondary hover:text-secondary-hover ${className}`}
   on:click={handleClick}
 >
   {#if isLoading}

@@ -48,11 +48,11 @@
 <div class="my-5 flex justify-between text-base leading-none">
   <div class="flex w-4/6 justify-between gap-x-4">
     <input
-      class="w-3/6 rounded border-2 border-darkGray p-1.5"
+      class="w-3/6 rounded border-2 border-mediumGray p-1.5"
       bind:value={name}
     />
     <input
-      class="w-3/6 rounded border-2 border-darkGray p-1.5"
+      class="w-3/6 rounded border-2 border-mediumGray p-1.5"
       bind:value={description}
     />
   </div>
