@@ -8,6 +8,8 @@ input CreateEventTypeInput {
   name: String!
 }
 
+scalar Date
+
 input DeleteEventTypeInput {
   id: ID!
 }
@@ -16,11 +18,12 @@ type Event {
   completed_games_count: Int!
   donation_amount: Float!
   donation_count: Int!
-  end_date: Time!
+  end_date: Date!
   eventType: EventType!
   id: ID!
   max_viewers_count: Int!
-  start_date: Time!
+  scheduleId: Int!
+  start_date: Date!
   tweets_count: Int!
   twitch_chats_count: Int!
   year: Int!
@@ -48,8 +51,6 @@ type Query {
   getEventTypes: [EventType!]!
   getEvents: [Event!]!
 }
-
-scalar Time
 
 input UpdateEventTypeInput {
   description: String

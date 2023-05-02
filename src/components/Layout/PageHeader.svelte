@@ -5,9 +5,22 @@
   export let details: string = '';
 </script>
 
-<h1 class="font-cubano text-3xl uppercase leading-normal">
-  <A
-    href="/"
-    className="border-b-2 border-primary">{title}</A
-  ><span class="ml-6">{details}</span>
-</h1>
+<div class="flex flex-wrap font-cubano text-3xl uppercase leading-normal">
+  <span class="inline-block">
+    <A
+      href="/"
+      className="mr-[25px] border-b-2 border-primary">{title}</A
+    >
+  </span>
+  <span class="inline-block">{details}</span>
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    h1,
+    span {
+      font-size: 7vmin;
+      margin-left: 5px;
+    }
+  }
+</style>

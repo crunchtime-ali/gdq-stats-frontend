@@ -6,7 +6,10 @@
 </script>
 
 <Section title="Event Types">
-  <div slot="content">
+  <div
+    slot="content"
+    class="p-5"
+  >
     <div class="flex text-base leading-none">
       <div class="flex w-4/6 gap-x-4">
         <div class="w-1/2">Name</div>

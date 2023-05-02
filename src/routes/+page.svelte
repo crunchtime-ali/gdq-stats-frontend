@@ -1,2 +1,20 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+  import { load_getCurrentEvent } from '../../$houdini';
+  import Event from '../components/Event/Event.svelte';
+  import type { PageData } from './$houdini';
+
+  export let data: PageData;
+
+  $: ({ getCurrentEvent } = data);
+
+  const handleFocus = async () => {
+    ({ getCurrentEvent } = await load_getCurrentEvent({
+      policy: 'NetworkOnly'
+    }));
+  };
+</script>
+
+<svelte:window on:focus={handleFocus} />
+{#if $getCurrentEvent.data?.getCurrentEvent}
+  <Event event={$getCurrentEvent.data?.getCurrentEvent} />
+{/if}

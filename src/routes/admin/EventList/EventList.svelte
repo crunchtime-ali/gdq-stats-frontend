@@ -9,7 +9,7 @@
 <Section title="events"
   ><div
     slot="content"
-    class="text-base leading-none"
+    class="p-5 text-base leading-none"
   >
     {#each events as event}
       <EventListItem {event} />

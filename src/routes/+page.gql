@@ -1,0 +1,20 @@
+query getCurrentEvent {
+  getCurrentEvent {
+    id
+    eventType {
+      id
+      name
+      description
+    }
+    year
+    start_date
+    end_date
+    max_viewers_count
+    donation_amount
+    donation_count
+    completed_games_count
+    twitch_chats_count
+    tweets_count
+    scheduleId
+  }
+}
