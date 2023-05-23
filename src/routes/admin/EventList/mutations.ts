@@ -8,12 +8,12 @@ const migrateEventData = graphql(`
         name
       }
       year
-      max_viewers_count
-      donation_count
-      donation_amount
-      completed_games_count
-      twitch_chats_count
-      tweets_count
+      donations
+      donors
+      games_completed
+      tweets
+      twitch_chats
+      viewers
     }
   }
 `);

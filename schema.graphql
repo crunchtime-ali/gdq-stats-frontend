@@ -15,24 +15,56 @@ input DeleteEventTypeInput {
 }
 
 type Event {
-  completed_games_count: Int!
-  donation_amount: Float!
-  donation_count: Int!
+  donations: Float!
+  donors: Int!
   end_date: Date!
   eventType: EventType!
+  games_completed: Int!
   id: ID!
-  max_viewers_count: Int!
   scheduleId: Int!
   start_date: Date!
-  tweets_count: Int!
-  twitch_chats_count: Int!
+  tweets: Int!
+  twitch_chats: Int!
+  viewers: Int!
   year: Int!
+}
+
+input EventDataInput {
+  name: String!
+  year: Int!
+}
+
+type EventDataResponse {
+  eventData: [EventDatum]!
+  eventDataType: EventDataType!
+}
+
+enum EventDataType {
+  DONATIONS
+  DONORS
+  TWEETS
+  TWITCH_CHATS
+  VIEWERS
+}
+
+type EventDatum {
+  donation_amount: Float!
+  donors: Int!
+  timestamp: Date!
+  tweets: Int!
+  twitch_chats: Int!
+  viewers: Int!
 }
 
 type EventType {
   description: String!
   id: ID!
   name: String!
+}
+
+input GetEventDataInput {
+  event: EventDataInput
+  eventDataType: EventDataType!
 }
 
 input MigrateEventDataInput {
@@ -48,6 +80,7 @@ type Mutation {
 
 type Query {
   getCurrentEvent: Event!
+  getEventData(input: GetEventDataInput): EventDataResponse!
   getEventTypes: [EventType!]!
   getEvents: [Event!]!
 }

@@ -7,15 +7,15 @@
   export let event: getCurrentEvent$result['getCurrentEvent'];
 
   const {
-    max_viewers_count,
-    donation_amount,
-    donation_count,
-    completed_games_count,
-    tweets_count,
-    twitch_chats_count,
+    donations,
+    donors,
+    eventType: { description, name },
+    games_completed,
     scheduleId,
-    year,
-    eventType: { description, name }
+    tweets,
+    twitch_chats,
+    viewers,
+    year
   } = event;
 </script>
 
@@ -27,33 +27,33 @@
     <EventStat
       emoji={'📺'}
       title="Viewers:"
-      value={max_viewers_count}
+      value={viewers}
     />
     <EventStat
       emoji={'💸'}
       prefix={'$'}
       title="Donations:"
-      value={donation_amount}
+      value={donations}
     />
     <EventStat
       emoji={'🙌'}
       title="Number of Donations:"
-      value={donation_count}
+      value={donors}
     />
     <EventStat
       emoji={'🎮'}
       title="Games completed:"
-      value={completed_games_count}
+      value={games_completed}
     />
     <EventStat
       emoji={'💬'}
       title="Twitch Chats:"
-      value={twitch_chats_count}
+      value={twitch_chats}
     />
     <EventStat
       emoji={'🐦'}
       title="Tweets Tweeted:"
-      value={tweets_count}
+      value={tweets}
     />
   </div>
   <div

@@ -9,12 +9,12 @@ query getCurrentEvent {
     year
     start_date
     end_date
-    max_viewers_count
-    donation_amount
-    donation_count
-    completed_games_count
-    twitch_chats_count
-    tweets_count
+    donations
+    donors
+    games_completed
+    tweets
+    twitch_chats
+    viewers
     scheduleId
   }
 }

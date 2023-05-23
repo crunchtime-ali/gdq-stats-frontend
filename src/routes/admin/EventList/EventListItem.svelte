@@ -32,13 +32,13 @@
         isLoading={isEventDataMigrationLoading}
       >
         <div slot="content">
-          <p>Maximum Viewers: {event.max_viewers_count}</p>
-          <p>Total Donations: {event.donation_amount}</p>
-          <p>Number of Donations: {event.donation_count}</p>
-          <p>Completed Games: {event.completed_games_count}</p>
-          <p>Twitch Chats: {event.twitch_chats_count}</p>
+          <p>Maximum Viewers: {event.viewers}</p>
+          <p>Total Donations: {event.donations}</p>
+          <p>Number of Donations: {event.donors}</p>
+          <p>Completed Games: {event.games_completed}</p>
+          <p>Twitch Chats: {event.twitch_chats}</p>
           <p>Twitch Emotes: {0}</p>
-          <p>Tweets Tweeted: {event.tweets_count}</p>
+          <p>Tweets Tweeted: {event.tweets}</p>
         </div>
       </DataSection>
       <DataSection
