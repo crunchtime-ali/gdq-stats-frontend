@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { getAdminData$result } from '../../../../$houdini';
+  import type { getAdminData$result } from '$houdini';
   import Section from '../../../components/Layout/Section.svelte';
   import EventItem from './EventTypeItem.svelte';
   export let eventTypes: getAdminData$result['getEventTypes'];

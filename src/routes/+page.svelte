@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { load_getCurrentEvent } from '../../$houdini';
+  import { load_getCurrentEvent } from '$houdini';
   import Event from '../components/Event/Event.svelte';
   import type { PageData } from './$houdini';
 

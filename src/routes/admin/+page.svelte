@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { load_getAdminData } from '../../../$houdini';
+  import { load_getAdminData } from '$houdini';
   import Header from '../../components/Layout/PageHeader.svelte';
   import type { PageData } from './$houdini';
   import EventList from './EventList/EventList.svelte';

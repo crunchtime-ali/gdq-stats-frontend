@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { getCurrentEvent$result } from '../../../../$houdini';
+  import type { getCurrentEvent$result } from '$houdini';
   import A from '../../Layout/A.svelte';
   import Section from '../../Layout/Section.svelte';
   import EventStat from './EventStat.svelte';

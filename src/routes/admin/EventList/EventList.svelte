@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { getAdminData$result } from '../../../../$houdini';
+  import type { getAdminData$result } from '$houdini';
   import Section from '../../../components/Layout/Section.svelte';
   import EventListItem from './EventListItem.svelte';
 

@@ -1,6 +1,6 @@
 <script lang="ts">
+  import type { getAdminData$result } from '$houdini';
   import type { IterableElement } from 'type-fest';
-  import type { getAdminData$result } from '../../../../$houdini';
   import Section from '../../../components/Layout/Section.svelte';
   import DataSection from './DataSection.svelte';
   import { migrateEventData } from './mutations';
