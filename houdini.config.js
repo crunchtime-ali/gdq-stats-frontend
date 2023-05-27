@@ -3,7 +3,7 @@
 /** @type {import('houdini').ConfigFile} */
 const config = {
   watchSchema: {
-    url: 'https://dev.api.gdq-stats.tricirc.de/gql/query'
+    url: 'https://gdq-stats-staging.fly.dev/gql/query'
   },
   plugins: {
     'houdini-svelte': {}
