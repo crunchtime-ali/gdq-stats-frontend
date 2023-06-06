@@ -21,7 +21,9 @@
 >
   <li
     class={`mt-0.5 px-4 py-2.5 ${
-      activeChart.toLowerCase() === chart.toLowerCase() ? 'bg-primary' : 'hover:bg-lightGray'
+      activeChart.toLowerCase() === chart.toLowerCase()
+        ? 'bg-primary text-darkGray'
+        : 'text-mediumDarkGray hover:bg-lightGray'
     }`}
   >
     {name}

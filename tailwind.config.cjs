@@ -19,6 +19,7 @@ const config = {
         secondary: '#F21847',
         'secondary-hover': '#A20023',
         darkGray: '#333',
+        mediumDarkGray: '#666',
         mediumGray: '#DDD',
         lightGray: '#EEE'
       }

@@ -9,7 +9,7 @@
     ($page.url.searchParams.get(CHART_PARAMETER) as EventDataType$options) ?? EventDataType.VIEWERS;
 </script>
 
-<ul class="col-span-1 text-sm text-darkGray">
+<ul class="col-span-1 text-sm">
   {#each charts as { name, chart }}
     <ChartLink
       {activeChart}
