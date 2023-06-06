@@ -17,7 +17,6 @@
 
 <style>
   @media (max-width: 768px) {
-    h1,
     span {
       font-size: 7vmin;
       margin-left: 5px;
