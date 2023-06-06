@@ -41,18 +41,24 @@ type EventDataResponse {
 
 enum EventDataType {
   DONATIONS
+  DONATIONS_PER_MINUTE
   DONORS
   TWEETS
+  TWEETS_PER_MINUTE
   TWITCH_CHATS
+  TWITCH_CHATS_PER_MINUTE
   VIEWERS
 }
 
 type EventDatum {
-  donation_amount: Float!
+  donations: Float!
+  donations_per_minute: Float!
   donors: Int!
   timestamp: Date!
   tweets: Int!
+  tweets_per_minute: Int!
   twitch_chats: Int!
+  twitch_chats_per_minute: Int!
   viewers: Int!
 }
 
