@@ -3,7 +3,8 @@
 /** @type {import('houdini').ConfigFile} */
 const config = {
   watchSchema: {
-    url: 'https://gdq-stats-staging.fly.dev/gql/query'
+    url: (env) => env.PUBLIC_GRAPHQL_API_URL,
+    interval: process.env.NODE_ENV === 'development' ? 2 : null
   },
   plugins: {
     'houdini-svelte': {}
