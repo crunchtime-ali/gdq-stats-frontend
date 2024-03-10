@@ -68,6 +68,15 @@ type EventType {
   name: String!
 }
 
+type Game {
+  duration: String!
+  end_date: Date!
+  id: ID!
+  name: String!
+  runner: String!
+  start_date: Date!
+}
+
 input GetEventDataInput {
   event: EventDataInput
   eventDataType: EventDataType!
@@ -89,6 +98,7 @@ type Query {
   getEventData(input: GetEventDataInput): EventDataResponse!
   getEventTypes: [EventType!]!
   getEvents: [Event!]!
+  getGames(input: EventDataInput): [Game!]!
 }
 
 input UpdateEventTypeInput {

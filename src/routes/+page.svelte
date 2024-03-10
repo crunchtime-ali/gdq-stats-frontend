@@ -16,5 +16,9 @@
 
 <svelte:window on:focus={handleFocus} />
 {#if $getCurrentEvent.data?.getCurrentEvent}
-  <Event event={$getCurrentEvent.data?.getCurrentEvent} />
+  <Event
+    event={$getCurrentEvent.data?.getCurrentEvent}
+    games={$getCurrentEvent.data?.getGames}
+    completedGamesCount={$getCurrentEvent.data?.getCurrentEvent.games_completed ?? 0}
+  />
 {/if}
