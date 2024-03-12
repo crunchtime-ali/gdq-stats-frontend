@@ -94,6 +94,7 @@ type Mutation {
 }
 
 type Query {
+  getAlternativeEvents: [Event!]!
   getCurrentEvent: Event!
   getEventData(input: GetEventDataInput): EventDataResponse!
   getEventTypes: [EventType!]!

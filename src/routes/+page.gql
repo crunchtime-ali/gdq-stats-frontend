@@ -24,4 +24,11 @@ query getCurrentEvent {
     end_date
     duration
   }
+  getAlternativeEvents {
+    id
+    year
+    eventType {
+      name
+    }
+  }
 }
