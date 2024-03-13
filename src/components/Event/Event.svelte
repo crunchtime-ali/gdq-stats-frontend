@@ -5,6 +5,7 @@
   import Games from './Games.svelte';
   import LiveStats from './LiveStats/LiveStats.svelte';
   import More from './More.svelte';
+  import Info from './Info.svelte';
 
   export let event: getCurrentEvent$result['getCurrentEvent'];
   export let games: getCurrentEvent$result['getGames'];
@@ -28,3 +29,4 @@
   {completedGamesCount}
 />
 <More {event} {alternativeEvents} />
+<Info />
