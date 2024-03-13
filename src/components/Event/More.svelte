@@ -2,8 +2,8 @@
   import type { getCurrentEvent$result } from '$houdini';
   import A from '../Layout/A.svelte';
   import Section from '../Layout/Section.svelte';
-  import H3 from '../Shared/H3.svelte';
   import Container from '../Shared/Container.svelte';
+  import H3 from '../Shared/H3.svelte';
 
   export let event: getCurrentEvent$result['getCurrentEvent'];
   export let alternativeEvents: getCurrentEvent$result['getAlternativeEvents'];
@@ -39,14 +39,14 @@
         </ul>
       </div>
       <div class="w-1/2 px-4">
-        <H3 text="other events" />
+        <H3 text="more events" />
         <ul class="mb-2.5 list-disc pl-10">
           {#each alternativeEvents as alternativeEvent}
             <li>
               <A
                 href={`${buildLink(alternativeEvent.year, alternativeEvent.eventType.name)}`}
                 className="text-[16px] "
-              >{`${alternativeEvent.eventType.name} ${alternativeEvent.year}`}</A
+                >{`${alternativeEvent.eventType.name} ${alternativeEvent.year}`}</A
               >
             </li>
           {/each}

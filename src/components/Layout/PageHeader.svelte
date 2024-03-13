@@ -5,7 +5,7 @@
   export let details: string = '';
 </script>
 
-<div class="flex flex-wrap font-cubano text-3xl uppercase leading-normal">
+<div class="mb-5 flex flex-wrap font-cubano text-3xl uppercase leading-normal">
   <span class="inline-block">
     <A
       href="/"
