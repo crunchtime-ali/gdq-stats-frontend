@@ -1,7 +1,7 @@
-type CreateEvent {
-  name: String!
-  year: Int!
-}
+"""
+The @defer directive may be specified on a fragment spread to imply de-prioritization, that causes the fragment to be omitted in the initial response, and delivered as a subsequent response afterward. A query with @defer directive will cause the request to potentially return multiple responses, where non-deferred data is delivered in the initial response and data deferred delivered in a subsequent response. @include and @skip take precedence over @defer.
+"""
+directive @defer(if: Boolean = true, label: String) on FRAGMENT_SPREAD | INLINE_FRAGMENT
 
 input CreateEventTypeInput {
   description: String!
@@ -17,7 +17,6 @@ input DeleteEventTypeInput {
 type Event {
   donations: Float!
   donors: Int!
-  end_date: Date!
   eventType: EventType!
   games_completed: Int!
   id: ID!
@@ -82,6 +81,11 @@ input GetEventDataInput {
   eventDataType: EventDataType!
 }
 
+input GetGamesInput {
+  name: String!
+  year: Int!
+}
+
 input MigrateEventDataInput {
   id: ID!
 }
@@ -99,7 +103,7 @@ type Query {
   getEventData(input: GetEventDataInput): EventDataResponse!
   getEventTypes: [EventType!]!
   getEvents: [Event!]!
-  getGames(input: EventDataInput): [Game!]!
+  getGames(input: GetGamesInput): [Game!]!
 }
 
 input UpdateEventTypeInput {

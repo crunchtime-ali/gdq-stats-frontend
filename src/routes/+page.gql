@@ -8,7 +8,6 @@ query getCurrentEvent {
     }
     year
     start_date
-    end_date
     donations
     donors
     games_completed
