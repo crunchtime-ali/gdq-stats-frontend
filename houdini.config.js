@@ -4,7 +4,7 @@
 const config = {
   watchSchema: {
     url: (env) => env.PUBLIC_GRAPHQL_API_URL,
-    interval: process.env.NODE_ENV === 'development' ? 2 : null
+    interval: process.env.NODE_ENV === 'development' ? 2000 : null
   },
   plugins: {
     'houdini-svelte': {}
