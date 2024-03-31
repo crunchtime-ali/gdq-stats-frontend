@@ -6,6 +6,9 @@ node_modules
 .env
 .env.*
 !.env.example
+.idea
+$houdini
+.netlify
 
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
