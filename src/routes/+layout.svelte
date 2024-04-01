@@ -1,5 +1,6 @@
 <script>
   import '../app.css';
+  import 'iconify-icon';
   import Footer from '../components/Shared/Footer.svelte';
 </script>
 

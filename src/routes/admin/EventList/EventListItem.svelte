@@ -21,7 +21,10 @@
 </script>
 
 <div class="w-full justify-between gap-x-4 first:-mt-4">
-  <Section title={`${event.eventType.name} ${event.year}`}>
+  <Section
+    title={`${event.eventType.name} ${event.year}`}
+    dropdownEnabled
+  >
     <div
       slot="content"
       class="grid grid-cols-3 gap-x-20 p-5"

@@ -2,10 +2,15 @@
   import type { getAdminData$result } from '$houdini';
   import Section from '../../../components/Layout/Section.svelte';
   import EventItem from './EventTypeItem.svelte';
+
   export let eventTypes: getAdminData$result['getEventTypes'];
 </script>
 
-<Section title="Event Types">
+<Section
+  title="Event Types"
+  dropdownEnabled
+  open
+>
   <div
     slot="content"
     class="p-5"
