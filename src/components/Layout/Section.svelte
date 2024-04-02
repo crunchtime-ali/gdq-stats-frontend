@@ -8,7 +8,7 @@
 </script>
 
 <Accordion.Root
-  class="border-medium  mb-10 border-2"
+  class="border-medium border-2"
   disabled={!dropdownEnabled}
   value={!dropdownEnabled ? title : open ? title : undefined}
 >

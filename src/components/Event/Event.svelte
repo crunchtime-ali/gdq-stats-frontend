@@ -6,6 +6,7 @@
   import LiveStats from './LiveStats/LiveStats.svelte';
   import More from './More.svelte';
   import Info from './Info.svelte';
+  import SectionContainer from '../Layout/SectionContainer.svelte';
 
   export let event: getCurrentEvent$result['getCurrentEvent'];
   export let games: getCurrentEvent$result['getGames'];
@@ -22,11 +23,16 @@
   title={description}
   details={`${year} stats`}
 />
-<EventStats {event} />
-<LiveStats />
-<Games
-  {games}
-  {completedGamesCount}
-/>
-<More {event} {alternativeEvents} />
-<Info />
+<SectionContainer>
+  <EventStats {event} />
+  <LiveStats />
+  <Games
+    {games}
+    {completedGamesCount}
+  />
+  <More
+    {event}
+    {alternativeEvents}
+  />
+  <Info />
+</SectionContainer>
