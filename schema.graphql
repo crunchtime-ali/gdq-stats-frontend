@@ -3,6 +3,11 @@ The @defer directive may be specified on a fragment spread to imply de-prioritiz
 """
 directive @defer(if: Boolean = true, label: String) on FRAGMENT_SPREAD | INLINE_FRAGMENT
 
+input CreateEventInput {
+  eventTypeId: ID!
+  scheduleId: Int!
+}
+
 input CreateEventTypeInput {
   description: String!
   name: String!
@@ -91,6 +96,7 @@ input MigrateEventDataInput {
 }
 
 type Mutation {
+  createEvent(input: CreateEventInput!): Event!
   createEventType(input: CreateEventTypeInput!): EventType!
   deleteEventType(input: DeleteEventTypeInput!): EventType!
   migrateEventData(input: MigrateEventDataInput!): Event!

@@ -18,4 +18,24 @@ const migrateEventData = graphql(`
   }
 `);
 
-export { migrateEventData };
+const createEvent = graphql(`
+  mutation createEvent($input: CreateEventInput!) {
+    createEvent(input: $input) {
+      id
+      eventType {
+        name
+        id
+      }
+      donations
+      donors
+      games_completed
+      tweets
+      twitch_chats
+      viewers
+      year
+      ...All_Events_insert @prepend
+    }
+  }
+`);
+
+export { migrateEventData, createEvent };

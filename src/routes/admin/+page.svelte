@@ -19,4 +19,7 @@
 <svelte:window on:focus={handleFocus} />
 <Header title="admin stuff" />
 <EventTypeList eventTypes={$getAdminData?.data?.getEventTypes ?? []} />
-<EventList events={$getAdminData?.data?.getEvents ?? []} />
+<EventList
+  events={$getAdminData?.data?.getEvents ?? []}
+  eventTypes={$getAdminData?.data?.getEventTypes ?? []}
+/>
