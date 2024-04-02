@@ -10,7 +10,7 @@
 <Accordion.Root
   class="border-medium  mb-10 border-2"
   disabled={!dropdownEnabled}
-  value={open ? title : dropdownEnabled ? undefined : title}
+  value={!dropdownEnabled ? title : open ? title : undefined}
 >
   <Accordion.Item value={title}>
     <Accordion.Header class="bg-mediumGray ">
