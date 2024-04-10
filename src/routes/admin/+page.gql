@@ -11,9 +11,9 @@ query getAdminData {
         }
         donations
         donors
-        games_completed
+        completedGames
         tweets
-        twitch_chats
+        twitchChats
         viewers
         year
         scheduleId

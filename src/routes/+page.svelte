@@ -19,7 +19,7 @@
   <Event
     event={$getCurrentEvent.data?.getCurrentEvent}
     games={$getCurrentEvent.data?.getGames}
-    completedGamesCount={$getCurrentEvent.data?.getCurrentEvent.games_completed ?? 0}
+    completedGamesCount={$getCurrentEvent.data?.getCurrentEvent.completedGames ?? 0}
     alternativeEvents={$getCurrentEvent.data?.getAlternativeEvents}
   />
 {/if}

@@ -10,10 +10,10 @@
     donations,
     donors,
     eventType: { description, name },
-    games_completed,
+    completedGames,
     scheduleId,
     tweets,
-    twitch_chats,
+    twitchChats,
     viewers,
     year,
   } = event;
@@ -43,12 +43,12 @@
     <EventStat
       emoji={'🎮'}
       title="Games completed:"
-      value={games_completed}
+      value={completedGames}
     />
     <EventStat
       emoji={'💬'}
       title="Twitch Chats:"
-      value={twitch_chats}
+      value={twitchChats}
     />
     <EventStat
       emoji={'🐦'}

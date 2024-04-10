@@ -19,7 +19,7 @@
   const handleEventMigrationClick = async () => {
     isEventDataMigrationLoading = true;
     const migratedEventData = await migrateEventData.mutate({
-      input: { event_id: event.id },
+      input: { eventId: event.id },
     });
     isEventDataMigrationLoading = false;
     eventDataCount = migratedEventData.data?.migrateEventData.length || 0;
@@ -37,7 +37,7 @@
     let completedGames = 0;
     const now = dayjs();
     migratedGames.data?.migrateGames?.forEach((game) => {
-      const endDate = dayjs(game.end_date);
+      const endDate = dayjs(game.endDate);
       if (now.isAfter(endDate)) {
         completedGames += 1;
       }
@@ -104,8 +104,8 @@
           <p>Maximum Viewers: {event.viewers}</p>
           <p>Total Donations: {event.donations}</p>
           <p>Number of Donations: {event.donors}</p>
-          <p>Completed Games: {event.games_completed}</p>
-          <p>Twitch Chats: {event.twitch_chats}</p>
+          <p>Completed Games: {event.completedGames}</p>
+          <p>Twitch Chats: {event.twitchChats}</p>
           <p>Twitch Emotes: {0}</p>
           <p>Tweets Tweeted: {event.tweets}</p>
         </div>

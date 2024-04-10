@@ -3,6 +3,10 @@ The @defer directive may be specified on a fragment spread to imply de-prioritiz
 """
 directive @defer(if: Boolean = true, label: String) on FRAGMENT_SPREAD | INLINE_FRAGMENT
 
+input AggregateEventStatisticsInput {
+  id: ID!
+}
+
 input CreateEventInput {
   eventTypeId: ID!
   scheduleId: Int!
@@ -20,15 +24,15 @@ input DeleteEventTypeInput {
 }
 
 type Event {
+  completedGames: Int!
   donations: Float!
   donors: Int!
   eventType: EventType!
-  games_completed: Int!
   id: ID!
   scheduleId: Int!
-  start_date: Date!
+  startDate: Date!
   tweets: Int!
-  twitch_chats: Int!
+  twitchChats: Int!
   viewers: Int!
   year: Int!
 }
@@ -56,13 +60,13 @@ enum EventDataType {
 
 type EventDatum {
   donations: Float!
-  donations_per_minute: Float!
+  donationsPerMinute: Float!
   donors: Int!
   timestamp: Date!
   tweets: Int!
-  tweets_per_minute: Int!
-  twitch_chats: Int!
-  twitch_chats_per_minute: Int!
+  tweetsPerMinute: Int!
+  twitchChats: Int!
+  twitchChatsPerMinute: Int!
   viewers: Int!
 }
 
@@ -74,11 +78,11 @@ type EventType {
 
 type Game {
   duration: String!
-  end_date: Date!
+  endDate: Date!
   id: ID!
   name: String!
   runners: String!
-  start_date: Date!
+  startDate: Date!
 }
 
 input GetEventDataInput {
@@ -92,7 +96,7 @@ input GetGamesInput {
 }
 
 input MigrateEventDataInput {
-  event_id: ID!
+  eventId: ID!
 }
 
 input MigrateGamesInput {
@@ -100,6 +104,7 @@ input MigrateGamesInput {
 }
 
 type Mutation {
+  aggregateEventStatistics(input: AggregateEventStatisticsInput): Event!
   createEvent(input: CreateEventInput!): Event!
   createEventType(input: CreateEventTypeInput!): EventType!
   deleteEventType(input: DeleteEventTypeInput!): EventType!

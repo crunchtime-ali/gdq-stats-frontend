@@ -5,12 +5,12 @@ const migrateEventData = graphql(`
         migrateEventData(input: $input) {
             timestamp
             donations
-            donations_per_minute
+            donationsPerMinute
             donors
             tweets
-            tweets_per_minute
-            twitch_chats
-            twitch_chats_per_minute
+            tweetsPerMinute
+            twitchChats
+            twitchChatsPerMinute
             viewers
         }
     }
@@ -26,9 +26,9 @@ const createEvent = graphql(`
             }
             donations
             donors
-            games_completed
+            completedGames
             tweets
-            twitch_chats
+            twitchChats
             viewers
             year
             ...All_Events_insert @prepend
@@ -39,8 +39,8 @@ const createEvent = graphql(`
 const migrateGames = graphql(`
     mutation migrateGames($input: MigrateGamesInput!) {
         migrateGames(input: $input) {
-            start_date
-            end_date
+            startDate
+            endDate
         }
     }
 `);
@@ -51,9 +51,9 @@ const aggregateEventStatistics = graphql(`
             id
             donations
             donors
-            games_completed
+            completedGames
             tweets
-            twitch_chats
+            twitchChats
             scheduleId
             viewers
         }

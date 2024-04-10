@@ -15,20 +15,20 @@ export const _getEventDataVariables: getEventDataVariables = ({ url }) => {
 };
 
 export const _houdini_load = graphql(`
-  query getEventData($input: GetEventDataInput!) @cache(policy: CacheOrNetwork) {
-    getEventData(input: $input) {
-      eventDataType
-      eventData {
-        timestamp
-        viewers
-        donors
-        donations
-        donations_per_minute
-        tweets
-        tweets_per_minute
-        twitch_chats
-        twitch_chats_per_minute
-      }
+    query getEventData($input: GetEventDataInput!) @cache(policy: CacheOrNetwork) {
+        getEventData(input: $input) {
+            eventDataType
+            eventData {
+                timestamp
+                viewers
+                donors
+                donations
+                donationsPerMinute
+                tweets
+                tweetsPerMinute
+                twitchChats
+                twitchChatsPerMinute
+            }
+        }
     }
-  }
 `);
