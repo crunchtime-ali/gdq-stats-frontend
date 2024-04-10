@@ -13,16 +13,19 @@
   let isAggregationLoading = false;
 
   let eventDataCount = 0;
-  let gamesCount = 0;
-  let completedGamesCount = 0;
 
-  const handleEventMigrationClick = async () => {
+  const handleEventDataMigrationClick = async () => {
     isEventDataMigrationLoading = true;
     const migratedEventData = await migrateEventData.mutate({
       input: { eventId: event.id },
     });
     isEventDataMigrationLoading = false;
     eventDataCount = migratedEventData.data?.migrateEventData.length || 0;
+
+    event = {
+      ...event,
+      eventDataCount,
+    };
   };
 
   const handleGameMigrationClick = async () => {
@@ -33,7 +36,7 @@
       },
     });
     isGametDataMigrationLoading = false;
-    gamesCount = migratedGames.data?.migrateGames.length || 0;
+    const gamesCount = migratedGames.data?.migrateGames.length || 0;
     let completedGames = 0;
     const now = dayjs();
     migratedGames.data?.migrateGames?.forEach((game) => {
@@ -43,7 +46,11 @@
       }
     });
 
-    completedGamesCount = completedGames;
+    event = {
+      ...event,
+      totalGames: gamesCount,
+      completedGames,
+    };
   };
 
   const handleAggregateEventStatisticsClick = async () => {
@@ -74,13 +81,13 @@
       class="grid grid-cols-3 gap-x-20 p-5"
     >
       <DataSection
-        handler={handleEventMigrationClick}
+        handler={handleEventDataMigrationClick}
         buttonText="Migrate Event Data"
         isLoading={isEventDataMigrationLoading}
       >
         <div slot="content">
           <h3 class="mb-3 text-lg underline">Event Datasets</h3>
-          <p>Total Event Datasets: {eventDataCount}</p>
+          <p>Total Event Datasets: {event.eventDataCount}</p>
         </div>
       </DataSection>
       <DataSection
@@ -90,8 +97,8 @@
       >
         <div slot="content">
           <h3 class="mb-3 text-lg underline">Games Data</h3>
-          <p>Total Games: {gamesCount}</p>
-          <p>Completed Games: {completedGamesCount}</p>
+          <p>Total Games: {event.totalGames}</p>
+          <p>Completed Games: {event.completedGames}</p>
         </div>
       </DataSection>
       <DataSection
@@ -104,7 +111,6 @@
           <p>Maximum Viewers: {event.viewers}</p>
           <p>Total Donations: {event.donations}</p>
           <p>Number of Donations: {event.donors}</p>
-          <p>Completed Games: {event.completedGames}</p>
           <p>Twitch Chats: {event.twitchChats}</p>
           <p>Twitch Emotes: {0}</p>
           <p>Tweets Tweeted: {event.tweets}</p>

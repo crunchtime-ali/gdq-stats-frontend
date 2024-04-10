@@ -12,10 +12,12 @@ query getAdminData {
         donations
         donors
         completedGames
+        totalGames
         tweets
         twitchChats
         viewers
         year
+        eventDataCount
         scheduleId
     }
 }

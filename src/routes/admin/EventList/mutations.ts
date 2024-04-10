@@ -52,10 +52,11 @@ const aggregateEventStatistics = graphql(`
             donations
             donors
             completedGames
+            totalGames
             tweets
             twitchChats
-            scheduleId
             viewers
+            eventDataCount
         }
     }
 `);

@@ -27,10 +27,12 @@ type Event {
   completedGames: Int!
   donations: Float!
   donors: Int!
+  eventDataCount: Int!
   eventType: EventType!
   id: ID!
   scheduleId: Int!
   startDate: Date!
+  totalGames: Int!
   tweets: Int!
   twitchChats: Int!
   viewers: Int!
