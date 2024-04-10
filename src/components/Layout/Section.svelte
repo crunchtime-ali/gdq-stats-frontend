@@ -15,8 +15,9 @@
   <Accordion.Item value={title}>
     <Accordion.Header class="bg-mediumGray ">
       <Accordion.Trigger class="flex w-full flex-row items-center justify-between text-3xl">
-        <div class="bg-mediumGray p-2.5 font-cubano text-lg leading-none">
+        <div class="bg-mediumGray p-2.5 font-cubano text-lg leading-none flex items-center">
           <h2>{title}</h2>
+          <slot name="title" />
         </div>
         {#if dropdownEnabled}
           <iconify-icon icon="mdi:keyboard-arrow-down" />

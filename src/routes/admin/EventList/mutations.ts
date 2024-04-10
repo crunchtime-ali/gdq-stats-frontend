@@ -1,5 +1,14 @@
 import { graphql } from '$houdini';
 
+const activateEvent = graphql(`
+    mutation activateEvent($input: ActivateEventInput!) {
+        activateEvent(input: $input) {
+            id
+            activeEvent
+        }
+    }
+`);
+
 const migrateEventData = graphql(`
     mutation migrateEventData($input: MigrateEventDataInput!) {
         migrateEventData(input: $input) {
@@ -61,4 +70,4 @@ const aggregateEventStatistics = graphql(`
     }
 `);
 
-export { aggregateEventStatistics, createEvent, migrateEventData, migrateGames };
+export { activateEvent, aggregateEventStatistics, createEvent, migrateEventData, migrateGames };

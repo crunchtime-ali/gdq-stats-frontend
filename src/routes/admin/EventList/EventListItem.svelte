@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { getAdminData$result } from '$houdini';
+  import { type getAdminData$result, load_getAdminData } from '$houdini';
   import type { IterableElement } from 'type-fest';
   import dayjs from 'dayjs';
   import Section from '../../../components/Layout/Section.svelte';
   import DataSection from './DataSection.svelte';
-  import { aggregateEventStatistics, migrateEventData, migrateGames } from './mutations';
+  import { activateEvent, aggregateEventStatistics, migrateEventData, migrateGames } from './mutations';
 
   export let event: IterableElement<getAdminData$result['getEvents']>;
 
@@ -13,6 +13,17 @@
   let isAggregationLoading = false;
 
   let eventDataCount = 0;
+
+  const handleActivateEventClick = async () => {
+    await activateEvent.mutate({
+      input: {
+        id: event.id,
+      },
+    });
+    await load_getAdminData({
+      policy: 'NetworkOnly',
+    });
+  };
 
   const handleEventDataMigrationClick = async () => {
     isEventDataMigrationLoading = true;
@@ -76,6 +87,17 @@
     title={`${event.eventType.name} ${event.year}`}
     dropdownEnabled
   >
+    <div slot="title">
+      <button on:click|stopPropagation={handleActivateEventClick}>
+        {#if event.activeEvent}
+      <span
+        class="ml-2 inline-flex items-center rounded-md bg-green-100 px-1.5 py-0.5 text-xs font-medium text-green-700 hover:bg-green-200">active</span>
+        {:else }
+          <span
+            class="ml-2 inline-flex items-center rounded-md bg-blue-100 px-1.5 py-0.5 text-xs font-medium text-blue-700 hover:bg-blue-200">activate</span>
+        {/if}
+      </button>
+    </div>
     <div
       slot="content"
       class="grid grid-cols-3 gap-x-20 p-5"

@@ -9,6 +9,7 @@ query getAdminData {
         eventType {
             name
         }
+        activeEvent
         donations
         donors
         completedGames
