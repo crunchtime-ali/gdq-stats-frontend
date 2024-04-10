@@ -9,20 +9,20 @@ const config = {
   preprocess: [
     vitePreprocess(),
     preprocess({
-      postcss: true
-    })
+      postcss: true,
+    }),
   ],
 
   kit: {
     adapter: adapter({
       // will create a Netlify Edge Function using Deno-based
       // rather than using standard Node-based functions
-      edge: true
+      edge: true,
     }),
     alias: {
-      $houdini: './$houdini'
-    }
-  }
+      $houdini: './$houdini',
+    },
+  },
 };
 
 export default config;

@@ -15,8 +15,8 @@
       input: {
         id,
         description,
-        name
-      }
+        name,
+      },
     });
     isLoading = false;
   };
@@ -26,8 +26,8 @@
     const res = await createEventType.mutate({
       input: {
         description,
-        name
-      }
+        name,
+      },
     });
     isLoading = false;
     if (res.data) {
@@ -39,7 +39,7 @@
   const handleDeleteEventType = () => {
     isLoading = true;
     deleteEventType.mutate({
-      input: { id }
+      input: { id },
     });
     isLoading = false;
   };

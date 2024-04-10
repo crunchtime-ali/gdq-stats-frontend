@@ -6,7 +6,10 @@
 </script>
 
 <Section title="info for nerds">
-  <div slot="content" class="font-thin text-mediumDarkGray">
+  <div
+    slot="content"
+    class="font-thin text-mediumDarkGray"
+  >
     <Container>
       <div class="px-4 md:w-1/2">
         <H3 text="backend" />
@@ -55,39 +58,36 @@
           <li>
             <A
               href="https://apexcharts.com/"
-              className="text-[16px]"
-            >APEXCHARTS.JS</A
+              className="text-[16px]">APEXCHARTS.JS</A
             > is used for rendering the graphs.
           </li>
           <li>
             <A
               href="https://svelte.dev/docs/svelte-store/"
-              className="text-[16px]"
-            >Svelte stores</A
+              className="text-[16px]">Svelte stores</A
             > are used for managing the page's state.
           </li>
           <li>
             Design was heavily inspired by
             <A
               href="http://alligatr.co.uk/"
-              className="text-[16px]"
-            >alligatr's</A
+              className="text-[16px]">alligatr's</A
             > previous SGDQ stat pages.
           </li>
           <li>
             The website is hosted at
             <A
               href="https://www.netlify.com/"
-              className="text-[16px]"
-            >netlify</A
+              className="text-[16px]">netlify</A
             >.
           </li>
         </ul>
-        <p class="mb-2.5">This site is open sourced on <A
-          href="https://github.com/crunchtime-ali/gdq-stats-frontend"
-          className="text-[16px]"
-        >Github</A
-        ></p>
+        <p class="mb-2.5">
+          This site is open sourced on <A
+            href="https://github.com/crunchtime-ali/gdq-stats-frontend"
+            className="text-[16px]">Github</A
+          >
+        </p>
       </div>
     </Container>
   </div>

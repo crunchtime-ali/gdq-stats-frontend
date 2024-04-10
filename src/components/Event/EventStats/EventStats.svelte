@@ -15,7 +15,7 @@
     tweets,
     twitch_chats,
     viewers,
-    year
+    year,
   } = event;
 </script>
 

@@ -2,4 +2,4 @@
   export let text = '';
 </script>
 
-<h3 class="uppercase font-cubano text-lg text-darkGray">{text}</h3>
+<h3 class="font-cubano text-lg uppercase text-darkGray">{text}</h3>

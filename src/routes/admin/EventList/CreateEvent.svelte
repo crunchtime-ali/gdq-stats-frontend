@@ -18,8 +18,8 @@
   $: eventTypes.forEach((eventType) =>
     items.push({
       value: eventType,
-      label: eventType.name
-    })
+      label: eventType.name,
+    }),
   );
 
   let scheduleId: number | undefined;
@@ -53,8 +53,8 @@
     const res = await createEvent.mutate({
       input: {
         scheduleId,
-        eventTypeId: eventType.id
-      }
+        eventTypeId: eventType.id,
+      },
     });
 
     isLoading = false;

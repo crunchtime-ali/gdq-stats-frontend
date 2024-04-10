@@ -12,7 +12,7 @@
 
   const handleFocus = async () => {
     ({ getAdminData } = await load_getAdminData({
-      policy: 'NetworkOnly'
+      policy: 'NetworkOnly',
     }));
   };
 </script>

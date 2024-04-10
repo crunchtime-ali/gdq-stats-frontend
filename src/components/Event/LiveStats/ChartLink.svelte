@@ -15,7 +15,7 @@
   const navigate = () => {
     Cookies.set(CHART_PARAMETER, chart.toLowerCase(), { path: '/' });
     goto(href, {
-      noScroll: true
+      noScroll: true,
     });
   };
 

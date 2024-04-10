@@ -7,11 +7,11 @@ const config: UserConfig = {
   plugins: [houdini(), sveltekit()],
   resolve: {
     alias: {
-      $fonts: resolve('./fonts')
-    }
+      $fonts: resolve('./fonts'),
+    },
   },
   test: {
-    include: ['src/**/*.{test,spec}.{js,ts}']
-  }
+    include: ['src/**/*.{test,spec}.{js,ts}'],
+  },
 };
 export default config;

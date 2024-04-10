@@ -9,7 +9,7 @@
 
   const handleFocus = async () => {
     ({ getCurrentEvent } = await load_getCurrentEvent({
-      policy: 'NetworkOnly'
+      policy: 'NetworkOnly',
     }));
   };
 </script>

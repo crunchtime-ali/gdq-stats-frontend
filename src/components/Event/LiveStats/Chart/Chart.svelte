@@ -19,7 +19,7 @@
 
   $: chartOptions = generateChartOptions({
     chart,
-    seriesData
+    seriesData,
   });
 </script>
 

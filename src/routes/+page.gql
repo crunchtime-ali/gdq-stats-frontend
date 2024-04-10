@@ -1,33 +1,33 @@
 query getCurrentEvent {
-    getCurrentEvent {
-        id
-        eventType {
-            id
-            name
-            description
-        }
-        year
-        start_date
-        donations
-        donors
-        games_completed
-        tweets
-        twitch_chats
-        viewers
-        scheduleId
+  getCurrentEvent {
+    id
+    eventType {
+      id
+      name
+      description
     }
-    getGames {
-        name
-        runners
-        start_date
-        end_date
-        duration
+    year
+    start_date
+    donations
+    donors
+    games_completed
+    tweets
+    twitch_chats
+    viewers
+    scheduleId
+  }
+  getGames {
+    name
+    runners
+    start_date
+    end_date
+    duration
+  }
+  getAlternativeEvents {
+    id
+    year
+    eventType {
+      name
     }
-    getAlternativeEvents {
-        id
-        year
-        eventType {
-            name
-        }
-    }
+  }
 }

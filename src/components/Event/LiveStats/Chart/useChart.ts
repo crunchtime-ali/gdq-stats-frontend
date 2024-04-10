@@ -17,6 +17,6 @@ export const useChart: Action = (node, options: ApexOptions): ActionReturn => {
     },
     destroy: () => {
       chart?.destroy();
-    }
+    },
   };
 };

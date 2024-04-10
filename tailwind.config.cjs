@@ -8,10 +8,10 @@ const config = {
         sm: '576px',
         md: '768px',
         lg: '992px',
-        xl: '1200px'
+        xl: '1200px',
       },
       fontFamily: {
-        cubano: 'Cubano'
+        cubano: 'Cubano',
       },
       colors: {
         primary: '#00AEEF',
@@ -21,12 +21,12 @@ const config = {
         darkGray: '#333',
         mediumDarkGray: '#666',
         mediumGray: '#DDD',
-        lightGray: '#EEE'
-      }
-    }
+        lightGray: '#EEE',
+      },
+    },
   },
 
-  plugins: []
+  plugins: [],
 };
 
 module.exports = config;

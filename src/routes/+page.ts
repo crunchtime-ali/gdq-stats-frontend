@@ -9,8 +9,8 @@ export const _getEventDataVariables: getEventDataVariables = ({ url }) => {
 
   return {
     input: {
-      eventDataType
-    }
+      eventDataType,
+    },
   };
 };
 

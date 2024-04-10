@@ -15,7 +15,7 @@
 
   const {
     year,
-    eventType: { description }
+    eventType: { description },
   } = event;
 </script>
 

@@ -4,10 +4,10 @@
 const config = {
   watchSchema: {
     url: (env) => env.PUBLIC_GRAPHQL_API_URL,
-    interval: process.env.NODE_ENV === 'development' ? 2000 : null
+    interval: process.env.NODE_ENV === 'development' ? 2000 : null,
   },
   plugins: {
-    'houdini-svelte': {}
+    'houdini-svelte': {},
   },
   scalars: {
     // the name of the scalar we are configuring
@@ -22,9 +22,9 @@ const config = {
       // turn the value into something the API can use
       marshal(date) {
         return date.getTime();
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 export default config;

@@ -7,7 +7,7 @@ dayjs.extend(duration);
 
 export const generateChartOptions = ({
   chart,
-  seriesData
+  seriesData,
 }: {
   chart: Chart;
   seriesData: [number, number][];
@@ -18,54 +18,54 @@ export const generateChartOptions = ({
       width: '100%',
       type: 'line',
       toolbar: {
-        show: false
-      }
+        show: false,
+      },
     },
     noData: {
-      text: 'no data available yet'
+      text: 'no data available yet',
     },
     stroke: {
       curve: 'smooth',
       width: 1.5,
-      colors: ['#00AEEF']
+      colors: ['#00AEEF'],
     },
     grid: {
       yaxis: {
         lines: {
-          show: false
-        }
-      }
+          show: false,
+        },
+      },
     },
     series: [
       {
         data: seriesData,
-        name: 'series 1'
-      }
+        name: 'series 1',
+      },
     ],
     yaxis: {
       axisBorder: {
-        show: true
+        show: true,
       },
       axisTicks: {
-        show: true
+        show: true,
       },
       title: {
         text: chart.name,
         style: {
           fontSize: '13px',
-          cssClass: 'text-darkGray font-light abc pr-5'
-        }
+          cssClass: 'text-darkGray font-light abc pr-5',
+        },
       },
       forceNiceScale: true,
       labels: {
         style: {
           fontSize: '13px',
-          cssClass: 'text-mediumGray font-light'
+          cssClass: 'text-mediumGray font-light',
         },
         formatter: (val) => {
           return chart.format(val);
-        }
-      }
+        },
+      },
     },
     xaxis: {
       type: 'datetime',
@@ -77,13 +77,13 @@ export const generateChartOptions = ({
         },
         style: {
           fontSize: '13px',
-          cssClass: 'text-mediumGray font-light'
-        }
+          cssClass: 'text-mediumGray font-light',
+        },
       },
       tooltip: {
-        enabled: false
-      }
-    }
+        enabled: false,
+      },
+    },
   };
 
   return options;
