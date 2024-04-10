@@ -39,7 +39,7 @@ input EventDataInput {
 }
 
 type EventDataResponse {
-  eventData: [EventDatum]!
+  eventData: [EventDatum!]!
   eventDataType: EventDataType!
 }
 
@@ -77,7 +77,7 @@ type Game {
   end_date: Date!
   id: ID!
   name: String!
-  runner: String!
+  runners: String!
   start_date: Date!
 }
 
@@ -92,14 +92,19 @@ input GetGamesInput {
 }
 
 input MigrateEventDataInput {
-  id: ID!
+  event_id: ID!
+}
+
+input MigrateGamesInput {
+  scheduleId: Int!
 }
 
 type Mutation {
   createEvent(input: CreateEventInput!): Event!
   createEventType(input: CreateEventTypeInput!): EventType!
   deleteEventType(input: DeleteEventTypeInput!): EventType!
-  migrateEventData(input: MigrateEventDataInput!): Event!
+  migrateEventData(input: MigrateEventDataInput!): [EventDatum!]!
+  migrateGames(input: MigrateGamesInput!): [Game!]!
   updateEventType(input: UpdateEventTypeInput!): EventType!
 }
 

@@ -1,9 +1,10 @@
 <script lang="ts">
   import type { getAdminData$result } from '$houdini';
   import type { IterableElement } from 'type-fest';
+  import dayjs from 'dayjs';
   import Section from '../../../components/Layout/Section.svelte';
   import DataSection from './DataSection.svelte';
-  import { migrateEventData } from './mutations';
+  import { migrateEventData, migrateGames } from './mutations';
 
   export let event: IterableElement<getAdminData$result['getEvents']>;
 
@@ -11,12 +12,36 @@
   let isGametDataMigrationLoading = false;
   let isDonationDataMigrationLoading = false;
 
+  let gamesCount = 0;
+  let completedGamesCount = 0;
+
   const handleEventMigrationClick = async () => {
     isEventDataMigrationLoading = true;
     await migrateEventData.mutate({
       input: { event_id: event.id },
     });
     isEventDataMigrationLoading = false;
+  };
+
+  const handleGameMigrationClick = async () => {
+    isGametDataMigrationLoading = true;
+    const migratedGames = await migrateGames.mutate({
+      input: {
+        scheduleId: event.scheduleId,
+      },
+    });
+    isGametDataMigrationLoading = false;
+    gamesCount = migratedGames.data?.migrateGames.length || 0;
+    let completedGames = 0;
+    const now = dayjs();
+    migratedGames.data?.migrateGames?.forEach((game) => {
+      const endDate = dayjs(game.end_date);
+      if (now.isAfter(endDate)) {
+        completedGames += 1;
+      }
+    });
+
+    completedGamesCount = completedGames;
   };
 </script>
 
@@ -45,12 +70,16 @@
         </div>
       </DataSection>
       <DataSection
-        handler={() => {
-          alert('migrate game');
-        }}
+        handler={handleGameMigrationClick}
         dataType="Game"
         isLoading={isGametDataMigrationLoading}
-      />
+      >
+        <div slot="content">
+          <h3 class="mb-3 text-lg underline">Games Stats</h3>
+          <p>Total Games: {gamesCount}</p>
+          <p>Completed Games: {completedGamesCount}</p>
+        </div>
+      </DataSection>
       <DataSection
         handler={() => {
           alert('migrate donation');

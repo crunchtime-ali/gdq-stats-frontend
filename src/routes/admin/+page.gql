@@ -1,20 +1,21 @@
 query getAdminData {
-  getEventTypes @list(name: "All_Event_Types") {
-    id
-    name
-    description
-  }
-  getEvents @list(name: "All_Events") {
-    id
-    eventType {
-      name
+    getEventTypes @list(name: "All_Event_Types") {
+        id
+        name
+        description
     }
-    donations
-    donors
-    games_completed
-    tweets
-    twitch_chats
-    viewers
-    year
-  }
+    getEvents @list(name: "All_Events") {
+        id
+        eventType {
+            name
+        }
+        donations
+        donors
+        games_completed
+        tweets
+        twitch_chats
+        viewers
+        year
+        scheduleId
+    }
 }
