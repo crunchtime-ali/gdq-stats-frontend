@@ -45,4 +45,19 @@ const migrateGames = graphql(`
     }
 `);
 
-export { createEvent, migrateEventData, migrateGames };
+const aggregateEventStatistics = graphql(`
+    mutation aggregateEventStatistics($input: AggregateEventStatisticsInput!) {
+        aggregateEventStatistics(input: $input) {
+            id
+            donations
+            donors
+            games_completed
+            tweets
+            twitch_chats
+            scheduleId
+            viewers
+        }
+    }
+`);
+
+export { aggregateEventStatistics, createEvent, migrateEventData, migrateGames };
