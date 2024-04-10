@@ -14,7 +14,7 @@
   const handleEventMigrationClick = async () => {
     isEventDataMigrationLoading = true;
     await migrateEventData.mutate({
-      input: { id: event.id }
+      input: { event_id: event.id },
     });
     isEventDataMigrationLoading = false;
   };
