@@ -1,5 +1,7 @@
 <script lang="ts">
-  import type { getCurrentEvent$result } from '$houdini';
+  import type {
+    getEventInformation$result,
+  } from '$houdini';
   import PageHeader from '../Layout/PageHeader.svelte';
   import EventStats from './EventStats/EventStats.svelte';
   import Games from './Games.svelte';
@@ -8,9 +10,9 @@
   import Info from './Info.svelte';
   import SectionContainer from '../Layout/SectionContainer.svelte';
 
-  export let event: getCurrentEvent$result['getCurrentEvent'];
-  export let games: getCurrentEvent$result['getGames'];
-  export let alternativeEvents: getCurrentEvent$result['getAlternativeEvents'];
+  export let event: getEventInformation$result['getEvent'];
+  export let games: getEventInformation$result['getGames'];
+  export let alternativeEvents: getEventInformation$result['getAlternativeEvents'];
   export let completedGamesCount: number;
 
   const {

@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { getCurrentEvent$result } from '$houdini';
+  import type { getEventInformation$result } from '$houdini';
   import dayjs from 'dayjs';
   import Section from '../Layout/Section.svelte';
   import EventStat from './EventStats/EventStat.svelte';
 
-  export let games: getCurrentEvent$result['getGames'];
+  export let games: getEventInformation$result['getGames'];
   export let completedGamesCount: number;
 
   let headerRef: HTMLElement;

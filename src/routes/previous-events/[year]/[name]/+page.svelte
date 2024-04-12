@@ -1,14 +1,22 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import { load_getEventInformation } from '$houdini';
-  import Event from '../components/Event/Event.svelte';
   import type { PageData } from './$houdini';
+  import Event from '../../../../components/Event/Event.svelte';
+
 
   export let data: PageData;
-
+  $: console.log(data);
   $: ({ getEventInformation } = data);
 
   const handleFocus = async () => {
     ({ getEventInformation } = await load_getEventInformation({
+      variables: {
+        input: {
+          name: $page.params.name,
+          year: $page.params.year,
+        },
+      },
       policy: 'NetworkOnly',
     }));
   };

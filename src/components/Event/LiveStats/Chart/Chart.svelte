@@ -10,9 +10,17 @@
   $: chartData = $getEventData.data?.getEventData.eventData ?? [];
   $: chartType = $getEventData.data?.getEventData.eventDataType ?? EventDataType.VIEWERS;
 
+  const snakeToCamel = str =>
+    str.toLowerCase().replace(/([-_][a-z])/g, group =>
+      group
+        .toUpperCase()
+        .replace('-', '')
+        .replace('_', ''),
+    );
+
   $: seriesData = chartData.map((entry): [number, number] => {
     // @ts-ignore
-    return [entry?.timestamp.valueOf(), Math.round(entry[chartType.toLowerCase()]) ?? 0];
+    return [entry?.timestamp.valueOf(), Math.round(entry[snakeToCamel(chartType)]) ?? 0];
   });
 
   $: chart = charts.find((c) => c.chart === chartType) ?? charts[0];

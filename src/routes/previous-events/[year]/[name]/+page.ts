@@ -14,11 +14,20 @@ export const load = async (event) => {
 
   return {
     ...(await loadAll(load_getEventInformation({
-      event,
+      event, variables: {
+        input: {
+          name: event.params.name,
+          year: event.params.year,
+        },
+      },
     }), load_getEventData({
       event, variables: {
         input: {
           eventDataType,
+          event: {
+            name: event.params.name,
+            year: event.params.year,
+          },
         },
       },
     }))),

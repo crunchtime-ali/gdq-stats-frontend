@@ -6,14 +6,17 @@ import type { Chart } from '../chart-definitions';
 dayjs.extend(duration);
 
 export const generateChartOptions = ({
-  chart,
-  seriesData,
-}: {
+                                       chart,
+                                       seriesData,
+                                     }: {
   chart: Chart;
   seriesData: [number, number][];
 }): ApexOptions => {
   const options: ApexOptions = {
     chart: {
+      animations: {
+        enabled: false,
+      },
       height: 500,
       width: '100%',
       type: 'line',

@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type { getCurrentEvent$result } from '$houdini';
+  import type { getEventInformation$result } from '$houdini';
   import A from '../Layout/A.svelte';
   import Section from '../Layout/Section.svelte';
   import Container from '../Shared/Container.svelte';
   import H3 from '../Shared/H3.svelte';
 
-  export let event: getCurrentEvent$result['getCurrentEvent'];
-  export let alternativeEvents: getCurrentEvent$result['getAlternativeEvents'];
+  export let event: getEventInformation$result['getEvent'];
+  export let alternativeEvents: getEventInformation$result['getAlternativeEvents'];
 
   const buildLink = (year: number, name: string) =>
     `/previous-events/${year}/${name.toLocaleLowerCase()}`;
@@ -46,7 +46,7 @@
               <A
                 href={`${buildLink(alternativeEvent.year, alternativeEvent.eventType.name)}`}
                 className="text-[16px] "
-                >{`${alternativeEvent.eventType.name} ${alternativeEvent.year}`}</A
+              >{`${alternativeEvent.eventType.name} ${alternativeEvent.year}`}</A
               >
             </li>
           {/each}

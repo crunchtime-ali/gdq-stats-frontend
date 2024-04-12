@@ -44,11 +44,6 @@ type Event {
   year: Int!
 }
 
-input EventDataInput {
-  name: String!
-  year: Int!
-}
-
 type EventDataResponse {
   eventData: [EventDatum!]!
   eventDataType: EventDataType!
@@ -93,11 +88,11 @@ type Game {
 }
 
 input GetEventDataInput {
-  event: EventDataInput
+  event: GetEventInformationInput
   eventDataType: EventDataType!
 }
 
-input GetGamesInput {
+input GetEventInformationInput {
   name: String!
   year: Int!
 }
@@ -122,12 +117,13 @@ type Mutation {
 }
 
 type Query {
-  getAlternativeEvents: [Event!]!
+  getAlternativeEvents(input: GetEventInformationInput): [Event!]!
   getCurrentEvent: Event!
+  getEvent(input: GetEventInformationInput): Event!
   getEventData(input: GetEventDataInput): EventDataResponse!
   getEventTypes: [EventType!]!
   getEvents: [Event!]!
-  getGames(input: GetGamesInput): [Game!]!
+  getGames(input: GetEventInformationInput): [Game!]!
 }
 
 input UpdateEventTypeInput {

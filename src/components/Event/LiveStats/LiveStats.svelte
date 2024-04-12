@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import type { PageData } from '../../../routes/$houdini';
+  import type { PageData } from '../../../routes/previous-events/[year]/[name]/$houdini';
   import Section from '../../Layout/Section.svelte';
   import Chart from './Chart/Chart.svelte';
   import ChartSelection from './ChartSelection.svelte';
