@@ -45,7 +45,7 @@ type Event {
 }
 
 type EventDataResponse {
-  eventData: [EventDatum!]!
+  eventData: [EventDatumPayload!]!
   eventDataType: EventDataType!
 }
 
@@ -70,6 +70,11 @@ type EventDatum {
   twitchChats: Int!
   twitchChatsPerMinute: Int!
   viewers: Int!
+}
+
+type EventDatumPayload {
+  timestamp: Date!
+  value: Float!
 }
 
 type EventType {

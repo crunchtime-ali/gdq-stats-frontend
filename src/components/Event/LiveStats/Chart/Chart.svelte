@@ -13,27 +13,16 @@
   $: chartData = $getEventData.data?.getEventData.eventData ?? [];
   $: chartType = $getEventData.data?.getEventData.eventDataType ?? EventDataType.VIEWERS;
   $: gameData = $getEventInformation.data?.getGames ?? [];
-
-  const snakeToCamel = str =>
-    str.toLowerCase().replace(/([-_][a-z])/g, group =>
-      group
-        .toUpperCase()
-        .replace('-', '')
-        .replace('_', ''),
-    );
-
+  
   $: seriesData = chartData.map((entry): [number, number] => {
-    // @ts-ignore
-    return [entry?.timestamp.valueOf(), Math.round(entry[snakeToCamel(chartType)]) ?? 0];
+    return [entry?.timestamp.valueOf(), entry.value];
   });
 
   $: chart = charts.find((c) => c.chart === chartType) ?? charts[0];
 
   const createTooltip = (options: any): string => {
     const chartDefinition = getChartDefinition(chartType);
-    const timestamp = chartData[options.dataPointIndex].timestamp ?? 0;
-    const value = chartData[options.dataPointIndex][chartDefinition.name.toLowerCase()] ?? 0;
-    console.log(options);
+    const { timestamp, value } = chartData[options.dataPointIndex];
     return `
         <div
           class="relative border-[1.5px] border-mediumGray text-center w-56">

@@ -46,14 +46,7 @@ const getEventData = graphql(`
             eventDataType
             eventData {
                 timestamp
-                viewers
-                donors
-                donations
-                donationsPerMinute
-                tweets
-                tweetsPerMinute
-                twitchChats
-                twitchChatsPerMinute
+                value
             }
         }
     }
