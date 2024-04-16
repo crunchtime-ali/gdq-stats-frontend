@@ -2,15 +2,18 @@ import type { ApexOptions } from 'apexcharts';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import type { Chart } from '../chart-definitions';
+import { dictionary } from '../../../../../.svelte-kit/generated/client/app';
 
 dayjs.extend(duration);
 
 export const generateChartOptions = ({
                                        chart,
                                        seriesData,
+                                       createTooltip,
                                      }: {
   chart: Chart;
   seriesData: [number, number][];
+  createTooltip(options: any): string
 }): ApexOptions => {
   const options: ApexOptions = {
     chart: {
@@ -23,6 +26,9 @@ export const generateChartOptions = ({
       toolbar: {
         show: false,
       },
+    },
+    tooltip: {
+      custom: createTooltip,
     },
     noData: {
       text: 'no data available yet',
