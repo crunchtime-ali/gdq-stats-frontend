@@ -3,7 +3,7 @@
 
   export let className: string = '';
   export let href: string;
-  export let target: HTMLAttributeAnchorTarget = '_self';
+  export let target: HTMLAttributeAnchorTarget = '_parent';
 
   const rel = target === '_blank' ? 'noopener noreferrer' : '';
 </script>
@@ -11,6 +11,7 @@
 <a
   class={`text-secondary hover:text-secondary-hover ${className}`}
   {href}
-  {rel}
-  {target}><slot /></a
+  {rel}>
+  <slot />
+</a
 >
