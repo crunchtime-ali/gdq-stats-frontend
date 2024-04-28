@@ -10,11 +10,13 @@
 </script>
 
 <ul class="col-span-1 text-sm">
-  {#each charts as { name, chart }}
-    <ChartLink
-      {activeChart}
-      {name}
-      {chart}
-    />
-  {/each}
+  {#key $page.url.href}
+    {#each charts as { name, chart }}
+      <ChartLink
+        {activeChart}
+        {name}
+        {chart}
+      />
+    {/each}
+  {/key}
 </ul>
