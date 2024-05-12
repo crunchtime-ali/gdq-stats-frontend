@@ -7,7 +7,7 @@ const config: UserConfig = {
   plugins: [houdini(), sveltekit()],
   resolve: {
     alias: {
-      $fonts: resolve('./fonts'),
+      $fonts: resolve('./static/fonts'),
     },
   },
   test: {
